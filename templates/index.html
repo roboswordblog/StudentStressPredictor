@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Study Planner</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    height: 100vh;
+    background: radial-gradient(circle at 20% 20%, #1e3a8a, transparent),
+                radial-gradient(circle at 80% 80%, #9333ea, transparent),
+                #020617;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #e2e8f0;
+}
+
+/* CONTAINER */
+.container {
+    width: 440px;
+    padding: 45px;
+    border-radius: 22px;
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+}
+
+/* HEADER TEXT */
+h1 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    background: linear-gradient(90deg, #60a5fa, #c084fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 14px;
+    color: #94a3b8;
+    margin-bottom: 25px;
+    line-height: 1.4;
+}
+
+/* LABEL */
+label {
+    font-size: 13px;
+    color: #94a3b8;
+}
+
+/* TEXTAREA */
+textarea {
+    width: 100%;
+    height: 170px;
+    margin-top: 10px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(2,6,23,0.7);
+    color: #e2e8f0;
+    padding: 14px;
+    font-size: 14px;
+    resize: none;
+    outline: none;
+    transition: 0.25s;
+}
+
+/* PLACEHOLDER */
+textarea::placeholder {
+    color: #64748b;
+}
+
+/* FOCUS */
+textarea:focus {
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 2px rgba(96,165,250,0.2);
+}
+
+/* BUTTON */
+button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 13px;
+    border-radius: 12px;
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    transition: 0.25s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(59,130,246,0.4);
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+/* FOOTER TEXT */
+.footer {
+    margin-top: 18px;
+    text-align: center;
+    font-size: 12px;
+    color: #64748b;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Study Planner</h1>
+    <p class="subtitle">
+        Enter your homework, projects, or study tasks and get a smarter plan for how to tackle them.
+    </p>
+
+    <form method="post" action="/predict">
+        <label for="subjects">Your activities (one per line):</label>
+
+        <textarea id="subjects" name="subjects" placeholder="Math homework&#10;Science project&#10;History reading&#10;English essay"></textarea>
+
+        <button type="submit">Generate Plan</button>
+    </form>
+
+    <div class="footer">
+        Simple. Fast. Organized.
+    </div>
+
+</div>
+
+</body>
+</html>
